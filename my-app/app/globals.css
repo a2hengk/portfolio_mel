@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #eef7ff;
+  --surface: #ffffff;
+  --border: #d7ebfb;
+  --foreground: #3d4d63;
+  --muted: #7488a0;
+  --primary: #6fb1e6;
+  --primary-dark: #4a93cf;
+  --accent-pink: #ffd6e3;
+  --accent-blue-soft: #cfe8fb;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-blue-soft: var(--accent-blue-soft);
+  --font-heading: var(--font-quicksand);
+  --font-sans: var(--font-nunito);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(60rem 30rem at 90% -10%, #dff0fd 0%, transparent 60%),
+    radial-gradient(50rem 25rem at -10% 20%, #eaf6ff 0%, transparent 55%),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-nunito), Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .heading-font {
+    font-family: var(--font-quicksand), var(--font-nunito), sans-serif;
+  }
+
+  .card {
+    @apply rounded-3xl border border-[var(--border)] bg-[var(--surface)]/90 shadow-[0_20px_45px_-25px_rgba(79,140,197,0.45)];
+  }
+
+  .eyebrow {
+    font-family: var(--font-quicksand), var(--font-nunito), sans-serif;
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-[var(--primary-dark)];
+  }
+
+  .btn-primary {
+    font-family: var(--font-quicksand), var(--font-nunito), sans-serif;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 bg-[var(--primary)] text-white shadow-[0_12px_25px_-8px_rgba(74,147,207,0.7)] hover:bg-[var(--primary-dark)];
+  }
+
+  .btn-secondary {
+    font-family: var(--font-quicksand), var(--font-nunito), sans-serif;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 border-2 border-[var(--accent-blue-soft)] bg-white text-[var(--primary-dark)] hover:border-[var(--primary)];
+  }
+
+  .badge {
+    font-family: var(--font-quicksand), var(--font-nunito), sans-serif;
+    @apply rounded-full bg-[var(--accent-blue-soft)] px-3 py-1 text-xs font-semibold text-[var(--primary-dark)];
+  }
+
+  .badge-pink {
+    font-family: var(--font-quicksand), var(--font-nunito), sans-serif;
+    @apply rounded-full bg-[var(--accent-pink)] px-3 py-1 text-xs font-semibold text-[#c85f82];
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.float-soft {
+  animation: float-soft 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-soft {
+    animation: none;
+  }
 }

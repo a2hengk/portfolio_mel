@@ -1,69 +1,94 @@
 import Image from "next/image";
+import Link from "next/link";
+import { home } from "@/lib/content";
+import { Section } from "@/components/Section";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Section className="relative overflow-hidden pt-16 sm:pt-24">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[var(--accent-blue-soft)] blur-3xl"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute top-32 -left-20 h-56 w-56 rounded-full bg-[var(--accent-pink)]/50 blur-3xl"
+        />
+
+        <div className="relative flex flex-col-reverse items-center gap-10 sm:flex-row sm:justify-between">
+          <div className="flex max-w-xl flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+            <span className="eyebrow">Portfolio</span>
+            <h1 className="heading-font text-4xl font-bold leading-tight text-[var(--foreground)] sm:text-5xl">
+              {home.hero.greeting} {home.hero.name}
+              <br />
+              <span className="text-[var(--primary-dark)]">{home.hero.subtitle}</span>
+            </h1>
+            <p className="text-base leading-relaxed text-[var(--muted)]">
+              {home.hero.description}
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
+              <Link href={home.hero.primaryCta.href} className="btn-primary">
+                {home.hero.primaryCta.label}
+              </Link>
+              <Link href={home.hero.secondaryCta.href} className="btn-secondary">
+                {home.hero.secondaryCta.label}
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute inset-0 -z-10 scale-110 rounded-full bg-white blur-2xl"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <Image
+              src="/image.png"
+              alt="Profilbild"
+              width={260}
+              height={260}
+              className="float-soft h-56 w-56 rounded-full border-4 border-white object-cover shadow-[0_25px_50px_-15px_rgba(79,140,197,0.55)] sm:h-64 sm:w-64"
+              priority
+            />
+          </div>
         </div>
-      </main>
-    </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3">
+          {home.stats.map((stat) => (
+            <div key={stat.label} className="card px-6 py-6 text-center">
+              <p className="heading-font text-2xl font-bold text-[var(--primary-dark)]">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-sm text-[var(--muted)]">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="pt-0">
+        <div className="card px-8 py-10">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <span className="eyebrow">{home.featured.eyebrow}</span>
+            <span className="badge-pink">{home.featured.meta[2].value}</span>
+          </div>
+          <h3 className="heading-font mt-3 text-2xl font-bold text-[var(--foreground)]">
+            {home.featured.title}
+          </h3>
+          <p className="mt-3 max-w-2xl text-[var(--muted)]">{home.featured.description}</p>
+          <dl className="mt-6 grid grid-cols-1 gap-4 border-t border-[var(--border)] pt-6 sm:grid-cols-3">
+            {home.featured.meta.map((item) => (
+              <div key={item.label}>
+                <dt className="heading-font text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
+                  {item.label}
+                </dt>
+                <dd className="mt-1 text-sm font-medium text-[var(--foreground)]">
+                  {item.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </Section>
+    </>
   );
 }
