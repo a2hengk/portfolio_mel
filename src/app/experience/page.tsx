@@ -1,5 +1,5 @@
 import { experience } from "@/lib/content";
-import { Section, SectionHeading } from "@/components/Section";
+import { Section, SectionHeading } from "@/src/components/Section";
 
 export default function ExperiencePage() {
   return (

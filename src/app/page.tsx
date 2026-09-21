@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { home } from "@/lib/content";
-import { Section } from "@/components/Section";
+import { Section } from "@/src/components/Section";
 
 export default function Home() {
   return (
