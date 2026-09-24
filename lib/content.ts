@@ -21,9 +21,7 @@ export const site = {
 
 export const nav = [
   { href: "/about", label: "Über mich" },
-  { href: "/experience", label: "Werdegang" },
   { href: "/links", label: "Links" },
-  { href: "/uses", label: "Uses" },
 ];
 
 export const contact = {
@@ -43,8 +41,8 @@ export const home = {
     subtitle: site.role,
     description:
       "19 Jahre alt, aus Berlin und in der Ausbildung zur Bürokauffrau. Zwischen Organisation und Ordnung im Büro und Vollgas auf der Kawasaki Ninja 650 — abends gern mit Valorant und Alicia Online.",
-    primaryCta: { label: "Werdegang ansehen", href: "/experience" },
-    secondaryCta: { label: "Mehr über mich", href: "/about" },
+    primaryCta: { label: "Mehr über mich", href: "/about" },
+    secondaryCta: { label: "Links öffnen", href: "/links" },
   },
   stats: [
     { label: "Alter", value: "19 Jahre" },
@@ -77,45 +75,8 @@ export const about = {
     "Motorrad fahren, zocken und abschalten — das ist mein Ausgleich zum Büroalltag. Wenn ich nicht fahre, findest du mich vor dem PC bei Valorant oder Alicia Online.",
   hobbies: [
     { title: "Games", items: ["Valorant", "Alicia Online"] },
-    { title: "Serien & Filme", items: ["[Titel]", "[Titel]", "[Titel]"] },
-    { title: "Sonstiges", items: ["Biken in Berlin", "[Hobby]"] },
-  ],
-};
-
-export const experience = {
-  heading: "Mein Werdegang",
-  subheading: "Mein Weg bis hierher — und wohin er noch führen soll.",
-  timeline: [
-    {
-      period: "[Jahr]",
-      title: "[Station 1, z. B. Schule]",
-      place: "[Ort / Institution]",
-      description: "[Platzhaltertext zur ersten Station.]",
-    },
-    {
-      period: "[Jahr]",
-      title: "[Station 2]",
-      place: "[Ort / Institution]",
-      description: "[Platzhaltertext zur zweiten Station.]",
-    },
-    {
-      period: "[Jahr]",
-      title: "[Station 3]",
-      place: "[Ort / Institution]",
-      description: "[Platzhaltertext zur dritten Station.]",
-    },
-    {
-      period: "[Jahr] — heute",
-      title: "Ausbildung zur Bürokauffrau",
-      place: "Berlin · [Betrieb]",
-      description: "Aktuell in der Ausbildung: Büroorganisation, Kommunikation und kaufmännische Abläufe im Alltag.",
-    },
-    {
-      period: "[Ziel / Ausblick]",
-      title: "[Nächster Schritt]",
-      place: "[Ort / Institution]",
-      description: "[Platzhaltertext zum geplanten nächsten Schritt.]",
-    },
+    { title: "Serien & Filme", items: ["Off Campus", "Game of Thrones", "1883"] },
+    { title: "Sonstiges", items: ["Bikergirl", "[Hobby]"] },
   ],
 };
 
@@ -126,27 +87,6 @@ export const linksPage = {
     { label: "Discord", tag: "Chat", handle: site.discordHandle, href: "#" },
     { label: "Instagram", tag: "Fotos", handle: site.instagramHandle, href: site.instagram },
     { label: "TikTok", tag: "Videos", handle: site.tiktokHandle, href: site.tiktok },
-  ],
-};
-
-export const usesPage = {
-  heading: "Was ich täglich benutze",
-  intro: "[Platzhaltertext: kurze Einleitung zu Tools & Setup.]",
-  loadoutHeading: "Live Loadout",
-  loadout: [
-    { label: "[Tool 1]", percent: 90 },
-    { label: "[Tool 2]", percent: 80 },
-    { label: "[Tool 3]", percent: 65 },
-    { label: "[Tool 4]", percent: 50 },
-  ],
-  setupHeading: "Setup",
-  setup: [
-    { label: "Gerät", value: "[Platzhalter]" },
-    { label: "CPU", value: "[Platzhalter]" },
-    { label: "RAM", value: "[Platzhalter]" },
-    { label: "Speicher", value: "[Platzhalter]" },
-    { label: "Bildschirm", value: "[Platzhalter]" },
-    { label: "Peripherie", value: "[Platzhalter]" },
   ],
 };
 

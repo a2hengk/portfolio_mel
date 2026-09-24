@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { about } from "@/lib/content";
 import { Section, SectionHeading } from "@/src/components/Section";
 
@@ -8,11 +7,6 @@ export default function AboutPage() {
     <>
       <Section className="pt-16">
         <SectionHeading eyebrow={about.eyebrow} heading={about.heading} text={about.intro} />
-        <div className="mt-6">
-          <Link href="/experience" className="btn-primary">
-            Werdegang ansehen
-          </Link>
-        </div>
       </Section>
 
       <Section className="pt-0">
