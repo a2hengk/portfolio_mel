@@ -4,9 +4,11 @@
 // eckige Klammern sind in einem href für Next.js' <Link> nicht erlaubt (werden als
 // Routen-Parameter interpretiert), deshalb zeigen alle Platzhalter-Links unten auf "#".
 export const site = {
-  name: "[Name]",
-  role: "[Rolle, z. B. Junior Webdesignerin]",
-  status: "[Schülerin / Studentin / Azubi]",
+  name: "Mel",
+  role: "Auszubildende Bürokauffrau",
+  status: "Azubi",
+  age: 19,
+  location: "Berlin",
   email: "[email@platzhalter.de]",
   github: "#",
   githubHandle: "@[username]",
@@ -20,18 +22,16 @@ export const site = {
 export const nav = [
   { href: "/about", label: "Über mich" },
   { href: "/experience", label: "Werdegang" },
-  { href: "/projects", label: "Projekte" },
-  { href: "/off-duty", label: "Freizeit" },
   { href: "/links", label: "Links" },
   { href: "/uses", label: "Uses" },
 ];
 
 export const contact = {
   heading: "Lust, Hallo zu sagen?",
-  text: "Der schnellste Weg mich zu erreichen ist über die Links-Seite oder direkt über GitHub und E-Mail. [Platzhaltertext — Ton/Wortwahl gern anpassen.]",
+  text: "Du willst dich austauschen, zocken oder einfach mal über Motorräder quatschen? Über die Links-Seite erreichst du mich am schnellsten.",
   ctas: [
     { label: "Links öffnen", href: "/links" },
-    { label: "GitHub", href: site.github },
+    { label: "Instagram", href: site.instagram },
     { label: "E-Mail", href: "#" },
   ],
 };
@@ -42,57 +42,49 @@ export const home = {
     name: site.name,
     subtitle: site.role,
     description:
-      "[Platzhaltertext: 1–2 Sätze darüber, was sie aktuell macht, lernt oder aufbaut — z. B. Ausbildung, Studiengang oder Fachrichtung.]",
+      "19 Jahre alt, aus Berlin und in der Ausbildung zur Bürokauffrau. Zwischen Organisation und Ordnung im Büro und Vollgas auf der Kawasaki Ninja 650 — abends gern mit Valorant und Alicia Online.",
     primaryCta: { label: "Werdegang ansehen", href: "/experience" },
     secondaryCta: { label: "Mehr über mich", href: "/about" },
   },
   stats: [
-    { label: "Erfahrung", value: "[X] Jahre" },
-    { label: "Projekte", value: "[X]+ Builds" },
-    { label: "Fokus", value: "[Bereich]" },
+    { label: "Alter", value: "19 Jahre" },
+    { label: "Wohnort", value: "Berlin" },
+    { label: "Ausbildung", value: "Bürokauffrau" },
   ],
-  featured: {
-    eyebrow: "Featured Projekt",
-    title: "[Projektname]",
-    meta: [
-      { label: "Stack", value: "[Tech 1], [Tech 2], [Tech 3]" },
-      { label: "Basis", value: "[Schule / Unternehmen]" },
-      { label: "Status", value: "[In Arbeit]" },
-    ],
-    description:
-      "[Kurze Beschreibung: was das Projekt macht, welches Problem es löst und warum es ihr wichtig ist.]",
-  },
 };
 
 export const about = {
   eyebrow: "Sector 01 — Über mich",
   heading: "Ein genauerer Blick darauf, wer ich bin",
   intro:
-    "[Platzhaltertext: kurze Einleitung, worum es auf dieser Seite geht.]",
-  bioHeading: "Die Person hinter [Fachbereich/Interesse]",
-  bio: "[Platzhalter-Bio: Alter, Wohnort, aktuelle Schule/Ausbildung/Studium, was sie antreibt und wonach sie sucht.]",
-  skillsHeading: "Skills & Werkzeuge",
-  skillsIntro:
-    "[Platzhaltertext über den aktuellen Stack, Tools und was sie gerade lernen möchte.]",
-  skillGroups: [
-    { title: "Design", items: ["[Skill]", "[Skill]", "[Skill]"] },
-    { title: "Entwicklung", items: ["[Skill]", "[Skill]", "[Skill]"] },
-    { title: "Workflow", items: ["[Tool]", "[Tool]", "[Tool]"] },
-    { title: "Interessen", items: ["[Interesse]", "[Interesse]", "[Interesse]"] },
-  ],
-  proficiencies: [
-    { label: "[Skill 1]", level: 3 },
-    { label: "[Skill 2]", level: 2 },
-    { label: "[Skill 3]", level: 4 },
-  ],
-  beyondHeading: "Abseits vom Bildschirm",
+    "Kurz und knapp: wer ich bin, was ich mache und was mich antreibt.",
+  bioHeading: "Die Person hinter dem Schreibtisch (und dem Helm)",
+  bio: "Ich bin 19, wohne in Berlin und mache aktuell meine Ausbildung zur Bürokauffrau. Im Job liebe ich es, Abläufe zu organisieren und den Überblick zu behalten. In meiner Freizeit bin ich Bikergirl mit Leib und Seele — am liebsten auf meiner Kawasaki Ninja 650 — und zocke abends Valorant und Alicia Online.",
+  bike: {
+    eyebrow: "Auf zwei Rädern",
+    title: "Kawasaki Ninja 650",
+    image: "/ninja-650.png",
+    meta: [
+      { label: "Motor", value: "649 ccm Reihen-Zweizylinder" },
+      { label: "Typ", value: "Sportlicher Allrounder" },
+      { label: "Bikergirl", value: "Aus Leidenschaft" },
+    ],
+    description:
+      "Wenn der Feierabend ruft, geht es aufs Bike. Die Ninja 650 ist mein Ausgleich zum Büroalltag — Freiheit, Fahrspaß und Berlin bei Nacht.",
+  },
+  beyondHeading: "Abseits vom Büro",
   beyondText:
-    "[Platzhaltertext über Hobbys — z. B. Sport, Musik, Serien, Zeichnen.]",
+    "Motorrad fahren, zocken und abschalten — das ist mein Ausgleich zum Büroalltag. Wenn ich nicht fahre, findest du mich vor dem PC bei Valorant oder Alicia Online.",
+  hobbies: [
+    { title: "Games", items: ["Valorant", "Alicia Online"] },
+    { title: "Serien & Filme", items: ["[Titel]", "[Titel]", "[Titel]"] },
+    { title: "Sonstiges", items: ["Biken in Berlin", "[Hobby]"] },
+  ],
 };
 
 export const experience = {
   heading: "Mein Werdegang",
-  subheading: "[Platzhaltertext: kurzer Rückblick auf den bisherigen Weg.]",
+  subheading: "Mein Weg bis hierher — und wohin er noch führen soll.",
   timeline: [
     {
       period: "[Jahr]",
@@ -113,10 +105,10 @@ export const experience = {
       description: "[Platzhaltertext zur dritten Station.]",
     },
     {
-      period: "[Jahr — heute]",
-      title: "[Aktuelle Station]",
-      place: "[Ort / Institution]",
-      description: "[Platzhaltertext zur aktuellen Station.]",
+      period: "[Jahr] — heute",
+      title: "Ausbildung zur Bürokauffrau",
+      place: "Berlin · [Betrieb]",
+      description: "Aktuell in der Ausbildung: Büroorganisation, Kommunikation und kaufmännische Abläufe im Alltag.",
     },
     {
       period: "[Ziel / Ausblick]",
@@ -127,58 +119,10 @@ export const experience = {
   ],
 };
 
-export const projects = {
-  heading: "Ausgewählte Projekte",
-  intro:
-    "[Platzhaltertext: kurze Einleitung zu Apps, Experimenten und Dingen, die sie gerne baut.]",
-  items: [
-    {
-      title: "[Projekt 1]",
-      status: "Featured",
-      description: "[Platzhalterbeschreibung des Projekts.]",
-      stack: ["[Tech]", "[Tech]", "[Tech]"],
-      links: [{ label: "GitHub", href: "#" }, { label: "Ansehen", href: "#" }],
-    },
-    {
-      title: "[Projekt 2]",
-      status: "In Arbeit",
-      description: "[Platzhalterbeschreibung des Projekts.]",
-      stack: ["[Tech]", "[Tech]"],
-      links: [{ label: "GitHub", href: "#" }],
-    },
-    {
-      title: "[Projekt 3]",
-      status: "Live",
-      description: "[Platzhalterbeschreibung des Projekts.]",
-      stack: ["[Tech]", "[Tech]"],
-      links: [{ label: "GitHub", href: "#" }],
-    },
-    {
-      title: "[Projekt 4]",
-      status: "In Arbeit",
-      description: "[Platzhalterbeschreibung des Projekts.]",
-      stack: ["[Tech]", "[Tech]", "[Tech]"],
-      links: [{ label: "GitHub", href: "#" }],
-    },
-  ],
-};
-
-export const offDuty = {
-  heading: "Was ich mache, wenn ich Feierabend habe",
-  intro:
-    "[Platzhaltertext: worauf sie in ihrer Freizeit steht — Spiele, Serien, Hobbys.]",
-  categories: [
-    { title: "Games", items: ["[Spiel]", "[Spiel]", "[Spiel]"] },
-    { title: "Serien & Filme", items: ["[Titel]", "[Titel]", "[Titel]"] },
-    { title: "Sonstiges", items: ["[Hobby]", "[Hobby]", "[Hobby]"] },
-  ],
-};
-
 export const linksPage = {
   heading: "Willst du in Kontakt treten? Fang hier an.",
-  intro: "[Platzhaltertext: kurze Einladung, sich zu melden.]",
+  intro: "Ob Frage, Zocken oder Motorrad-Talk — melde dich einfach.",
   items: [
-    { label: "GitHub", tag: "Code", handle: site.githubHandle, href: site.github },
     { label: "Discord", tag: "Chat", handle: site.discordHandle, href: "#" },
     { label: "Instagram", tag: "Fotos", handle: site.instagramHandle, href: site.instagram },
     { label: "TikTok", tag: "Videos", handle: site.tiktokHandle, href: site.tiktok },

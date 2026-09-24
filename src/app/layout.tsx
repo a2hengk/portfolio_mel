@@ -16,8 +16,8 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "[Name] — Portfolio",
-  description: "[Platzhalter-Beschreibung für die Portfolio-Seite von [Name].]",
+  title: "Mel — Portfolio",
+  description: "Portfolio von Mel — Auszubildende Bürokauffrau, 19, aus Berlin. Bikergirl, Valorant und Alicia Online.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

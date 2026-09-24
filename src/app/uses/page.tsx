@@ -8,7 +8,7 @@ export default function UsesPage() {
 
       <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div className="card px-6 py-6">
-          <h3 className="heading-font text-sm font-bold text-[var(--primary-dark)]">
+          <h3 className="heading-font text-sm font-bold text-[var(--primary-light)]">
             {usesPage.loadoutHeading}
           </h3>
           <div className="mt-4 flex flex-col gap-4">
@@ -18,7 +18,7 @@ export default function UsesPage() {
                   <span>{tool.label}</span>
                   <span className="text-[var(--muted)]">{tool.percent}%</span>
                 </div>
-                <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-[var(--accent-blue-soft)]">
+                <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-[var(--accent-soft)]">
                   <div
                     className="h-full rounded-full bg-[var(--primary)]"
                     style={{ width: `${tool.percent}%` }}
@@ -30,7 +30,7 @@ export default function UsesPage() {
         </div>
 
         <div className="card px-6 py-6">
-          <h3 className="heading-font text-sm font-bold text-[var(--primary-dark)]">
+          <h3 className="heading-font text-sm font-bold text-[var(--primary-light)]">
             {usesPage.setupHeading}
           </h3>
           <dl className="mt-4 flex flex-col divide-y divide-[var(--border)]">

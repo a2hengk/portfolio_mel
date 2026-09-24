@@ -10,12 +10,12 @@ export default function ExperiencePage() {
         text={experience.subheading}
       />
 
-      <ol className="relative mt-12 flex flex-col gap-8 border-l-2 border-dashed border-[var(--accent-blue-soft)] pl-8">
+      <ol className="relative mt-12 flex flex-col gap-8 border-l-2 border-dashed border-[var(--accent-soft)] pl-8">
         {experience.timeline.map((step, i) => (
           <li key={i} className="relative">
             <span
               aria-hidden
-              className="absolute -left-[41px] flex h-8 w-8 items-center justify-center rounded-full border-4 border-white bg-[var(--primary)] text-xs font-bold text-white shadow-[0_6px_14px_-4px_rgba(79,140,197,0.7)]"
+              className="absolute -left-[41px] flex h-8 w-8 items-center justify-center rounded-full border-4 border-[var(--background)] bg-[var(--primary)] text-xs font-bold text-white shadow-[0_6px_14px_-4px_rgba(200,30,60,0.7)]"
             >
               {i + 1}
             </span>

@@ -3,7 +3,7 @@ import { contact, site } from "@/lib/content";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[var(--border)] bg-white/70">
+    <footer className="border-t border-[var(--border)] bg-black/30">
       <div className="mx-auto w-full max-w-5xl px-6 py-16">
         <div className="card flex flex-col items-center gap-6 px-8 py-12 text-center">
           <span className="eyebrow">Kontakt</span>
@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="flex flex-wrap justify-center gap-3">
             {contact.ctas.map((cta, i) => (
               <Link
-                key={cta.href}
+                key={cta.label}
                 href={cta.href}
                 className={i === 0 ? "btn-primary" : "btn-secondary"}
               >
@@ -28,9 +28,9 @@ export default function Footer() {
 
         <div className="mt-8 flex flex-col items-center justify-between gap-3 text-xs text-[var(--muted)] sm:flex-row">
           <p>
-            © {new Date().getFullYear()} {site.name} · gebaut mit ☁️ und viel Geduld
+            © {new Date().getFullYear()} {site.name} · gebaut mit 🖤 und Benzin im Blut
           </p>
-          <Link href="/impressum" className="heading-font font-semibold hover:text-[var(--primary-dark)]">
+          <Link href="/impressum" className="heading-font font-semibold hover:text-[var(--primary-light)]">
             Impressum
           </Link>
         </div>

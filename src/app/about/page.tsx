@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { about } from "@/lib/content";
 import { Section, SectionHeading } from "@/src/components/Section";
@@ -7,12 +8,9 @@ export default function AboutPage() {
     <>
       <Section className="pt-16">
         <SectionHeading eyebrow={about.eyebrow} heading={about.heading} text={about.intro} />
-        <div className="mt-6 flex flex-wrap gap-3">
+        <div className="mt-6">
           <Link href="/experience" className="btn-primary">
             Werdegang ansehen
-          </Link>
-          <Link href="/projects" className="btn-secondary">
-            Projekte ansehen
           </Link>
         </div>
       </Section>
@@ -28,57 +26,61 @@ export default function AboutPage() {
       </Section>
 
       <Section className="pt-0">
-        <SectionHeading heading={about.skillsHeading} text={about.skillsIntro} />
-        <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {about.skillGroups.map((group) => (
-            <div key={group.title} className="card px-6 py-6">
-              <h4 className="heading-font text-sm font-bold text-[var(--primary-dark)]">
-                {group.title}
-              </h4>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span key={item} className="badge">
-                    {item}
-                  </span>
-                ))}
-              </div>
+        <div className="card px-8 py-10">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <span className="eyebrow">{about.bike.eyebrow}</span>
+            <span className="badge-alt">{about.bike.meta[2].value}</span>
+          </div>
+          <div className="mt-3 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-md">
+              <h3 className="heading-font text-2xl font-bold text-[var(--foreground)]">
+                {about.bike.title}
+              </h3>
+              <p className="mt-3 text-[var(--muted)]">{about.bike.description}</p>
             </div>
-          ))}
-        </div>
-
-        <div className="card mt-4 px-6 py-6">
-          <h4 className="heading-font text-sm font-bold text-[var(--primary-dark)]">
-            Erfahrungslevel
-          </h4>
-          <div className="mt-4 flex flex-col gap-4">
-            {about.proficiencies.map((skill) => (
-              <div key={skill.label}>
-                <div className="flex justify-between text-sm font-medium text-[var(--foreground)]">
-                  <span>{skill.label}</span>
-                  <span className="text-[var(--muted)]">{skill.level}/5</span>
-                </div>
-                <div className="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-[var(--accent-blue-soft)]">
-                  <div
-                    className="h-full rounded-full bg-[var(--primary)]"
-                    style={{ width: `${(skill.level / 5) * 100}%` }}
-                  />
-                </div>
+            <Image
+              src={about.bike.image}
+              alt={about.bike.title}
+              width={632}
+              height={395}
+              className="h-auto w-full max-w-sm self-center drop-shadow-[0_20px_30px_rgba(200,30,60,0.35)]"
+            />
+          </div>
+          <dl className="mt-6 grid grid-cols-1 gap-4 border-t border-[var(--border)] pt-6 sm:grid-cols-3">
+            {about.bike.meta.map((item) => (
+              <div key={item.label}>
+                <dt className="heading-font text-xs font-semibold uppercase tracking-wide text-[var(--muted)]">
+                  {item.label}
+                </dt>
+                <dd className="mt-1 text-sm font-medium text-[var(--foreground)]">
+                  {item.value}
+                </dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </Section>
 
       <Section className="pt-0">
-        <div className="card px-8 py-10">
-          <span className="eyebrow">Freizeit</span>
-          <h3 className="heading-font mt-2 text-xl font-bold text-[var(--foreground)]">
-            {about.beyondHeading}
-          </h3>
-          <p className="mt-3 max-w-2xl leading-relaxed text-[var(--muted)]">{about.beyondText}</p>
-          <Link href="/off-duty" className="btn-secondary mt-6 inline-flex">
-            Mehr dazu
-          </Link>
+        <SectionHeading eyebrow="Freizeit" heading={about.beyondHeading} text={about.beyondText} />
+        <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-3">
+          {about.hobbies.map((category) => (
+            <div key={category.title} className="card px-6 py-6">
+              <h4 className="heading-font text-sm font-bold text-[var(--primary-light)]">
+                {category.title}
+              </h4>
+              <ul className="mt-4 flex flex-col gap-2">
+                {category.items.map((item, i) => (
+                  <li
+                    key={`${item}-${i}`}
+                    className="rounded-xl bg-[var(--accent-soft)]/50 px-3 py-2 text-sm text-[var(--foreground)]"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </Section>
     </>
